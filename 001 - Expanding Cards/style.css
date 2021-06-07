@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  flex-direction: column;
+}
+
+h1 {
+  position: absolute;
+  top: 1rem;
+  background-color: rgba(70, 25, 7, 0.685);
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  color: #fff;  
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  width: 90vw;
+  margin: 5rem auto;
+}
+
+.card:nth-child(1) {
+  background-image: url(./assets/newYork-1.jpg);
+}
+.card:nth-child(2) {
+  background-image: url(./assets/newYork-2.jpg);
+}
+.card:nth-child(3) {
+  background-image: url(./assets/newYork-3.jpg);
+}
+.card:nth-child(4) {
+  background-image: url(./assets/newYork-4.jpg);
+}
+.card:nth-child(5) {
+  background-image: url(./assets/newYork-5.jpg);
+}
+
+.card {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 1rem;
+  position: relative;
+  transition: flex 0.5s ease-in;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  opacity: 0;
+}
+
+.card.active {
+  flex: 5;
+}
+
+.card.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4.s;
+}
+
+@media only screen and (max-width: 768px) {
+  .cards-container {
+  flex-direction: column;
+}
+
+  .card {
+  border-radius: 10px;
+  padding: 4rem;
+  width: 90vw;
+  transition: ease-in 0.4s;
+}
+
+.card h3 {
+  font-size: 1rem;
+}
+
+.card.active {
+  padding: 10rem;
+  transition: ease-in 0.4s;
+}
+
+}
